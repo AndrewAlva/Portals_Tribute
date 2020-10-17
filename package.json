@@ -1,0 +1,19 @@
+{
+	"name": "Brunch-Boilerplate",
+	"description": "Brunch boilerplate made from scratch by Andrew Alva.",
+	"private": true,
+	"author": "Andrew Alva",
+	"version": "1.0.0",
+	"repository": "",
+	"scripts": {
+		"start": "brunch watch --server",
+		"build": "brunch build --production"
+	},
+	"devDependencies": {
+		"auto-reload-brunch": "^2.7.1",
+		"brunch": "^3.0.0",
+		"jade-brunch": "^2.8.0",
+		"sass-brunch": "^3.0.0",
+		"uglify-js-brunch": "^2.10.0"
+	}
+}

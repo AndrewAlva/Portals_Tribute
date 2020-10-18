@@ -21,11 +21,11 @@
 }
 
 @mixin translate($Xmove, $Ymove){
-	-webkit-transform: translate($Xmove, $Ymove);
-	-moz-transform: translate($Xmove, $Ymove);
-	-ms-transform: translate($Xmove, $Ymove);
-	-o-transform: translate($Xmove, $Ymove);
-	transform: translate($Xmove, $Ymove);
+	-webkit-transform: translate3d($Xmove, $Ymove, 0);
+	-moz-transform: translate3d($Xmove, $Ymove, 0);
+	-ms-transform: translate3d($Xmove, $Ymove, 0);
+	-o-transform: translate3d($Xmove, $Ymove, 0);
+	transform: translate3d($Xmove, $Ymove, 0);
 }
 
 @mixin rotate($degs){

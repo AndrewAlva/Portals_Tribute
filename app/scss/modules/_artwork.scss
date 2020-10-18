@@ -1,0 +1,164 @@
+.artwork-container{
+	position: relative;
+	width: 100vh;
+	height: 100vh;
+	display: block;
+	margin: 0 auto;
+	border: 1px solid #f60;
+	text-align: center;
+
+	.artist-logo{
+		z-index: 1;
+		position: absolute;
+		margin: auto;
+		width: 28vh;
+		height: 9vh;
+
+		top: 5.3vh;
+		left: 0; right: 0;
+		// border: 1px solid #f60;
+
+		.img-wrap{
+			position: relative;
+			width: 100%;
+			// border: 1px solid green;
+			overflow: hidden;
+		}
+
+		.main-wrap{
+			z-index: 5;
+			height: 29%;
+			background-color: rgba(255,255,255,0.5);
+		}
+
+		.second-wrap{
+			z-index: 4;
+			height: 15%;
+			background-color: rgba(0,255,0, .5);
+		}
+
+		.third-wrap{
+			z-index: 3;
+			height: 12%;
+			background-color: rgba(0,0,255, .5);
+		}
+
+		.fourth-wrap{
+			z-index: 2;
+			height: 8%;
+			background-color: rgba(255,0,0, .5);
+		}
+
+		.bottom{
+			img{
+				bottom: 0;
+			}
+		}
+
+		img{
+			position: absolute;
+			margin: auto;
+			width: 100%;
+			left: 0;
+			opacity: 0.4;
+		}
+	}
+
+	.artwork-img{
+		// opacity: 0;
+
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		overflow: hidden;
+
+		img{
+			position: relative;
+			width: 100%;
+			vertical-align: top;
+		}
+	}
+	
+	.album-title{
+		position: absolute;
+		width: 100%;
+		bottom: 3.6vh;
+		left: 0;
+
+		._title{
+			font-size: 20.4vh;
+			line-height: 1em;
+			letter-spacing: -.05em;
+			font-weight: 100;
+			color: #555;
+			text-align: center;
+
+			._mask{
+				position: relative;
+				display: inline-block;
+				vertical-align: bottom;
+				height: 17.5vh;
+				line-height: 22vh;
+				overflow: hidden;
+
+				// R
+				&:nth-child(3){
+					margin-left: -.02em;
+				}
+
+				// T
+				&:nth-child(4){
+					margin-left: -.12em;
+				}
+
+				// A
+				&:nth-child(5){
+					margin-left: -.16em;
+				}
+
+				// S
+				&:nth-child(7){
+					margin-left: -.02em;
+				}
+			}
+
+			._wrap{
+				position: relative;
+				display: block;
+				@include transitions-ease(1.2s);
+				
+				&[data-intro="top"]{
+					@include translate(0, -102%);
+				}
+				
+				&[data-intro="bottom"]{
+					@include translate(0, 102%);
+				}
+				
+				&[data-intro="left"]{
+					@include translate(-102%, 0);
+				}
+				
+				&[data-intro="right"]{
+					@include translate(102%, 0);
+				}
+			}
+
+			&.show{
+				._mask{
+					@for $i from 1 through 8 {
+						&:nth-child(#{$i}) ._wrap{
+							@include trans-ease-delay(1.4s, #{($i * 0.1) - 0.1}s);
+						}
+					}
+				}
+
+				._wrap{
+					@include translate(0,0);
+				}
+			}
+		}
+	}
+}
+

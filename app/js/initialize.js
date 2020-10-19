@@ -3,13 +3,25 @@
 // without waiting for stylesheets, images, and
 // subframes to finish loading
 document.addEventListener('DOMContentLoaded', function() {
-    // Do something
+	// Do something
 });
 
 
 // Trigger functions after page is completely loaded
 window.onload = function() {
-    // Do something, remove preloader perhaps
-    console.log("Page fully loaded.");
-    console.log("Initialize.js");
+	// Do something, remove preloader perhaps
+	console.log("Page fully loaded.");
+	console.log("Initialize.js");
+
+	setTimeout(function(){
+		document.querySelector('.artist-logo').classList.add('show');
+	}, 1500);
+
+	setTimeout(function(){
+		document.querySelector('.title-container').classList.add('show');
+	}, 2500);
+
+	setTimeout(function(){
+		document.querySelector('.artwork-img').classList.add('show');
+	}, 3500);
 }

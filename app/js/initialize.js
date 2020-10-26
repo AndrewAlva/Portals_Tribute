@@ -13,15 +13,10 @@ window.onload = function() {
 	console.log("Page fully loaded.");
 	console.log("Initialize.js");
 
-	setTimeout(function(){
-		document.querySelector('.artist-logo').classList.add('show');
-	}, 1500);
+	document.querySelector('.artist-logo').classList.add('show');
 
-	setTimeout(function(){
-		document.querySelector('.title-container').classList.add('show');
-	}, 2500);
+	document.querySelector('.title-container').classList.add('show');
 
-	setTimeout(function(){
-		document.querySelector('.artwork-img').classList.add('show');
-	}, 3500);
+	document.querySelector('.artwork-img').classList.add('show');
+	
 }

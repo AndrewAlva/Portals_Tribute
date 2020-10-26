@@ -34,7 +34,7 @@
 			img{
 				top: 0.1em;
 				opacity: 0;
-				// @include translate(0, 102%);
+				@include translate(0, 1px);
 				@include trans-ease-delay(1.5s, 0s);
 			}
 		}
@@ -52,7 +52,7 @@
 			height: 12%;
 			// background-color: rgba(0,0,255, .5);
 			
-			img{@include trans-ease-delay(1.5s, 0.2s);}
+			img{@include trans-ease-delay(1.5s, 0.15s);}
 		}
 
 		.fourth-wrap{
@@ -60,7 +60,7 @@
 			height: 8%;
 			// background-color: rgba(255,0,0, .5);
 			
-			img{@include trans-ease-delay(1.5s, 0.4s);}
+			img{@include trans-ease-delay(1.5s, 0.3s);}
 		}
 
 		.top{
@@ -88,8 +88,6 @@
 			.main-wrap{
 				img{
 					opacity: 1;
-					// @include translate(0, 0);
-					@include scale(1,1);
 				}
 			}
 
@@ -102,25 +100,21 @@
 	}
 
 	.artwork-img{
-		position: relative;
-		width: 100%;
-		height: 100%;
-		margin: 0;
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		margin: auto;
+		width: 80.7%;
+		height: 80.7%;
 		overflow: hidden;
-		@include scale(0,0);
-		@include transitions-ease(2s);
+		-webkit-clip-path: inset(65% 50% 35% 50% round 5%);
+		clip-path: inset(65% 50% 35% 50% round 5%);
 
-		// &:after{
-		// 	content: '';
-		// 	display: block;
-		// 	position: absolute;
-		// 	top: 0; left: 0;
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	background-color: #000;
-		// 	@include transitions-ease(2s);
-		// 	@include transform-origin(top, center);
-		// }
+		// animation-duration: 3.5s;
+		// animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+		// animation-delay: 2.5s;
+		// animation-iteration-count: 1;
+		// animation-fill-mode: forwards;
 
 		canvas{
 			position: absolute;
@@ -140,19 +134,13 @@
 			position: relative;
 			width: 100%;
 			vertical-align: top;
-			@include scale(2.2,2.2);
 		}
 
 		&.show{
-			@include scale(1,1);
-			// &:after{
-			// 	@include scale(1,0);
-			// }
-
-			img{
-				@include transitions-ease(2s);
-				@include scale(1,1);
-			}
+			@include trans-delay(2.5s, 2.5s);
+			-webkit-clip-path: inset(0% 0% 0% 0% round 0%);
+			clip-path: inset(0% 0% 0% 0% round 0%);
+			// animation-name: clip_mask;
 		}
 	}
 
@@ -226,7 +214,7 @@
 				._mask{
 					@for $i from 1 through 8 {
 						&:nth-child(#{$i}) ._wrap{
-							@include trans-ease-delay(1.4s, #{($i * 0.1) - 0.1}s);
+							@include trans-ease-delay(1.8s, #{($i * 0.1) - 0.1 + 1.5}s);
 						}
 					}
 				}
@@ -239,4 +227,23 @@
 	}
 }
 
+@keyframes clip_mask {
+	0% {
+		clip-path: inset(62% 50% 38% 50% round 5%);
+	}
+	60% {
+		clip-path: inset(52% 40% 28% 40% round 10%);
+	}
+	100% {
+		clip-path: inset(0% 0% 0% 0% round 0%);
+	}
+}
 
+
+.tester{
+	position: absolute;
+	top: 0;
+	left: 0; right: 0;
+	margin: auto;
+	height: 100%;
+}

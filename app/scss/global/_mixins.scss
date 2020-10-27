@@ -20,6 +20,14 @@
 	transition: all $timing cubic-bezier(.3,0,.2,1) $delay;
 }
 
+@mixin trans-dual-delay($property1, $timing1, $delay1, $property2, $timing2, $delay2){
+	-webkit-transition: $property1 $timing1 cubic-bezier(.3,0,.2,1) $delay1, $property2 $timing2 cubic-bezier(.3,0,.2,1) $delay2;
+	-moz-transition: $property1 $timing1 cubic-bezier(.3,0,.2,1) $delay1, $property2 $timing2 cubic-bezier(.3,0,.2,1) $delay2;
+	-ms-transition: $property1 $timing1 cubic-bezier(.3,0,.2,1) $delay1, $property2 $timing2 cubic-bezier(.3,0,.2,1) $delay2;
+	-o-transition: $property1 $timing1 cubic-bezier(.3,0,.2,1) $delay1, $property2 $timing2 cubic-bezier(.3,0,.2,1) $delay2;
+	transition: $property1 $timing1 cubic-bezier(.3,0,.2,1) $delay1, $property2 $timing2 cubic-bezier(.3,0,.2,1) $delay2;
+}
+
 @mixin trans-delay($timing, $delay){
 	-webkit-transition: all $timing cubic-bezier(0.85, 0, 0.1, 1) $delay;
 	-moz-transition: all $timing cubic-bezier(0.85, 0, 0.1, 1) $delay;

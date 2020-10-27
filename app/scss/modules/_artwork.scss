@@ -13,7 +13,7 @@
 		position: absolute;
 		margin: auto;
 		width: 27.6vh;
-		height: 9vh;
+		height: 7.8vh;
 
 		top: 5.3vh;
 		left: 0; right: 0;
@@ -24,6 +24,10 @@
 			width: 100%;
 			// border: 1px solid green;
 			overflow: hidden;
+
+			& + .img-wrap{
+				margin-top: 0.15vw;
+			}
 		}
 
 		.main-wrap{
@@ -34,7 +38,7 @@
 			img{
 				top: 0.1em;
 				opacity: 0;
-				@include translate(0, 1px);
+				@include translate(0, -1px);
 				@include trans-ease-delay(1.5s, 0s);
 			}
 		}
@@ -127,7 +131,15 @@
 		}
 
 		picture{
-			// opacity: 0;
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.mask{
+			opacity: 0.5;
+			@include scale(1.15, 1.15);
 		}
 
 		img{
@@ -141,6 +153,13 @@
 			-webkit-clip-path: inset(0% 0% 0% 0% round 0%);
 			clip-path: inset(0% 0% 0% 0% round 0%);
 			// animation-name: clip_mask;
+
+			.mask{
+				// @include trans-delay(2.5s, 2.5s);
+				@include trans-dual-delay(transform, 2.8s, 2.5s,   opacity, 0s, 5.3s);
+				@include scale(1,1);
+				opacity: 1;
+			}
 		}
 	}
 

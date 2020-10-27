@@ -149,14 +149,14 @@
 		}
 
 		&.show{
-			@include trans-delay(2.5s, 2.5s);
+			@include trans-delay(2.5s, 3s);
 			-webkit-clip-path: inset(0% 0% 0% 0% round 0%);
 			clip-path: inset(0% 0% 0% 0% round 0%);
 			// animation-name: clip_mask;
 
 			.mask{
 				// @include trans-delay(2.5s, 2.5s);
-				@include trans-dual-delay(transform, 2.8s, 2.5s,   opacity, 0s, 5.3s);
+				@include trans-dual-delay(transform, 2.8s, 3s,   opacity, 0s, 5.8s);
 				@include scale(1,1);
 				opacity: 1;
 			}
@@ -210,6 +210,8 @@
 			._wrap{
 				position: relative;
 				display: block;
+				-webkit-filter: blur(10px);
+				filter: blur(10px);
 				@include transitions-ease(1.2s);
 				
 				&[data-intro="top"]{
@@ -240,6 +242,8 @@
 
 				._wrap{
 					@include translate(0,0);
+					-webkit-filter: blur(0px);
+					filter: blur(0px);
 				}
 			}
 		}

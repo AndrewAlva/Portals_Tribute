@@ -111,8 +111,8 @@
 		width: 80.7%;
 		height: 80.7%;
 		overflow: hidden;
-		-webkit-clip-path: inset(65% 50% 35% 50% round 5%);
-		clip-path: inset(65% 50% 35% 50% round 5%);
+		-webkit-clip-path: inset(65% 50% 35% 50% round 100%);
+		clip-path: inset(65% 50% 35% 50% round 100%);
 
 		// animation-duration: 3.5s;
 		// animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
@@ -149,14 +149,14 @@
 		}
 
 		&.show{
-			@include trans-delay(2.5s, 3s);
+			@include trans-delay(2.5s, 4s);
 			-webkit-clip-path: inset(0% 0% 0% 0% round 0%);
 			clip-path: inset(0% 0% 0% 0% round 0%);
 			// animation-name: clip_mask;
 
 			.mask{
 				// @include trans-delay(2.5s, 2.5s);
-				@include trans-dual-delay(transform, 2.8s, 3s,   opacity, 0s, 5.8s);
+				@include trans-dual-delay(transform, 2.8s, 4s,   opacity, 0s, 6.8s);
 				@include scale(1,1);
 				opacity: 1;
 			}
@@ -210,9 +210,9 @@
 			._wrap{
 				position: relative;
 				display: block;
-				-webkit-filter: blur(10px);
-				filter: blur(10px);
-				@include transitions-ease(1.2s);
+				-webkit-filter: blur(20px);
+				filter: blur(20px);
+				// @include transitions-ease(1.2s);
 				
 				&[data-intro="top"]{
 					@include translate(0, -102%);
@@ -234,16 +234,40 @@
 			&.show{
 				._mask{
 					@for $i from 1 through 8 {
-						&:nth-child(#{$i}) ._wrap{
-							@include trans-ease-delay(1.8s, #{($i * 0.1) - 0.1 + 1.5}s);
+						&:nth-child(#{$i}) {
+							._wrap{
+								@include trans-ease-delay(2.8s, #{($i * 0.1) - 0.1 + 1.3}s);
+							}
 						}
 					}
+
+					// &:nth-child(4) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.3s);}
+					// }
+					// &:nth-child(1) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.4s);}
+					// }
+					// &:nth-child(7) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.5s);}
+					// }
+					// &:nth-child(2) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.6s);}
+					// }
+					// &:nth-child(6) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.7s);}
+					// }
+					// &:nth-child(3) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.8s);}
+					// }
+					// &:nth-child(5) {
+					// 	._wrap{@include trans-ease-delay(2.8s, 1.9s);}
+					// }
 				}
 
 				._wrap{
 					@include translate(0,0);
-					-webkit-filter: blur(0px);
-					filter: blur(0px);
+					-webkit-filter: blur(0.1px);
+					filter: blur(0.1px);
 				}
 			}
 		}

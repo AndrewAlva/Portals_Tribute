@@ -13,10 +13,10 @@ window.onload = function() {
 	console.log("Page fully loaded.");
 	console.log("Initialize.js");
 
-	document.querySelector('.artist-logo').classList.add('show');
+	// document.querySelector('.artist-logo').classList.add('show');
 
-	document.querySelector('.title-container').classList.add('show');
+	// document.querySelector('.title-container').classList.add('show');
 
-	document.querySelector('.artwork-img').classList.add('show');
+	// document.querySelector('.artwork-img').classList.add('show');
 	
 }

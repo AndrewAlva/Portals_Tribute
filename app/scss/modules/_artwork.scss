@@ -1,11 +1,13 @@
 .artwork-container{
-	position: relative;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0; right: 0;
+	margin: auto;
 	width: 100vh;
 	height: 100vh;
-	display: block;
-	margin: 0 auto;
-	// border: 1px solid #f60;
 	text-align: center;
+	// border: 1px solid #f60;
 
 	.artist-logo{
 		// opacity: 0;
@@ -169,6 +171,7 @@
 		width: 100%;
 		bottom: 3.6vh;
 		left: 0;
+		font-family: 'Traviata', serif;
 
 		._title{
 			font-size: 20.4vh;

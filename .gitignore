@@ -1,6 +1,10 @@
 # Brunch output files
 /public
 
+# Property files
+/app/assets/music
+# /app/assets/fonts
+
 # Brunch folder for temporary files.
 tmp/
 

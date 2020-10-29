@@ -4,32 +4,50 @@
 	top: 0; left: 0;
 	width: 100%;
 	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
+	// text-transform: uppercase;
 	border: 1px solid red;
 
 	.inner-wrap{
-		position: absolute;
-		top: 0; bottom: 0;
-		left: 0; right: 0;
-		margin: auto;
-		width: 300px;
-		height: 200px;
+		position: relative;
+		width: 90%;
 		padding: 15px;
-		border: 1px solid #fff;
+		top: -20px;
+		// border: 1px solid #fff;
 
 		@media (min-width: 576px) {
 			width: 500px;
-			height: 300px;
 			padding: 30px;
 		}
 		
 		@media (min-width: 768px) {
+			top: 0;
 			width: 700px;
+		}
+	}
+
+	._logo{
+		position: absolute;
+		margin: auto;
+		left: 0; right: 0;
+		top: -20px;
+		width: 250px;
+		padding: 10px;
+		background-color: #000;
+
+		img{
+			position: relative;
+			width: 100%;
+			vertical-align: top;
 		}
 	}
 
 	._icon{
 		display: inline-block;
+		position: relative;
 		margin: 0 auto;
 		width: 50px;
 		height: 50px;
@@ -38,32 +56,82 @@
 		border: 1px solid #fff;
 	}
 
+	.title-wrap{
+		position: relative;
+		width: 100%;
+		margin-bottom: 25px;
+
+		@media (min-width: 768px) {
+			margin-bottom: 50px;
+		}
+	}
+
 	._title{
+		position: relative;
 		font-family: 'Traviata', serif;
 		font-size: 40px;
+		text-transform: uppercase;
+
+		@media (min-width: 768px) {
+			font-size: 60px;
+		}
 	}
 
 	._subtitle{
-		margin-bottom: 20px;
+		position: relative;
+		margin-top: 5px;
 		font-size: 18px;
-		font-weight: 300;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: .3em;
 	}
 
 	._body{
+		position: relative;
 		font-size: 16px;
+		font-weight: 200;
+		line-height: 1.5em;
 	}
 
-	._legals{
-		position: absolute;
-		left: 0;
-		bottom: 10px;
-		padding-left: 15px;
-		padding-right: 15px;
-		font-size: 12px;
+	._cta{
+		display: block;
 
-		@media (min-width: 576px) {
-			padding-left: 30px;
-			padding-right: 30px;
+		._btn{
+			margin-top: 30px;
+			padding: 10px 50px 8px;
+			border-radius: 50px;
+			border: 1px solid #fff;
+			font-family: 'Traviata', serif;
+			font-size: 20px;
+			text-transform: uppercase;
+			color: #fff;
+			background: none;
+		}
+	}
+
+	._artist{
+		text-transform: uppercase;
+	}
+
+	a{
+		color: inherit;
+		text-decoration: underline;
+	}
+
+
+	.legals{
+		position: absolute;
+		bottom: 20px;
+		margin-top: 20px;
+		padding-left: 30px;
+		padding-right: 30px;
+		font-size: 12px;
+		font-weight: 100;
+		line-height: 1.5em;
+		text-transform: uppercase;
+
+		@media (min-width: 768px) {
+			margin-top: 50px;
 		}
 	}
 }

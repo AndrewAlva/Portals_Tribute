@@ -214,8 +214,8 @@
 			._wrap{
 				position: relative;
 				display: block;
-				-webkit-filter: blur(20px);
-				filter: blur(20px);
+				-webkit-filter: blur(10px);
+				filter: blur(10px);
 				// @include transitions-ease(1.2s);
 				
 				&[data-intro="top"]{

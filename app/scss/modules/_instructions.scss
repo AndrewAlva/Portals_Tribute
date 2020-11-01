@@ -45,17 +45,6 @@
 		}
 	}
 
-	._icon{
-		display: inline-block;
-		position: relative;
-		margin: 0 auto;
-		width: 50px;
-		height: 50px;
-		margin-bottom: 20px;
-		border-radius: 50%;
-		border: 1px solid #fff;
-	}
-
 	.title-wrap{
 		position: relative;
 		width: 100%;
@@ -69,8 +58,10 @@
 	._title{
 		position: relative;
 		font-family: 'Traviata', serif;
-		font-size: 40px;
+		font-size: 50px;
+		font-weight: 300;
 		text-transform: uppercase;
+		// color: red;
 
 		@media (min-width: 768px) {
 			font-size: 60px;
@@ -79,7 +70,7 @@
 
 	._subtitle{
 		position: relative;
-		margin-top: 5px;
+		margin-top: 10px;
 		font-size: 18px;
 		font-weight: 500;
 		text-transform: uppercase;
@@ -93,19 +84,66 @@
 		line-height: 1.5em;
 	}
 
+	._icon{
+		display: inline-block;
+		position: relative;
+		margin: 0 auto;
+		width: 50px;
+		height: 50px;
+		margin-top: 20px;
+		border-radius: 50%;
+		border: 1px solid #fff;
+
+		@media (min-width: 768px) {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
 	._cta{
 		display: block;
 
 		._btn{
+			cursor: pointer;
+			position: relative;
 			margin-top: 30px;
 			padding: 10px 50px 8px;
 			border-radius: 50px;
 			border: 1px solid #fff;
 			font-family: 'Traviata', serif;
 			font-size: 20px;
-			text-transform: uppercase;
+			// text-transform: uppercase;
 			color: #fff;
-			background: none;
+			background-color: #000;
+			overflow: hidden;
+			@include transitions-ease(.5s);
+
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translate3d(-50%, -50%, 0) scale(0);
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				background-color: #fff;
+				@include transitions-ease(1.2s);
+			}
+
+			&:hover{
+				letter-spacing: .25em;
+				
+				&:before{
+					// border-radius: 0%;
+					transform: translate3d(-50%, -50%, 0) scale(1);
+				}
+			}
+
+			._label{
+				position: relative;
+				mix-blend-mode: difference;
+			}
 		}
 	}
 

@@ -129,6 +129,7 @@
 			width: 100%;
 			height: 100%;
 			background-color: #f60;
+			opacity: 0;
 
 			canvas{
 				position: relative;
@@ -163,10 +164,19 @@
 			// animation-name: clip_mask;
 
 			.mask{
-				@include trans-delay(2.5s, 2.5s);
-				// @include trans-dual-delay(transform, 2.8s, 4s,   opacity, 0s, 6.8s);
-				// @include scale(1,1);
-				transform: scale(2) translate3d(2.5%, -14%, 0px);
+				opacity: 1;
+				// First position
+				@include trans-dual-delay(transform, 2.8s, 4s,   opacity, 0s, 6.8s);
+				@include scale(1,1);
+				
+				// zoom position for av stuff
+				// @include trans-delay(2.5s, 2.5s);
+				// transform: scale(2) translate3d(2.5%, -14%, 0px);
+			}
+
+			// detonate this when music starts
+			#canvas-container{
+				@include trans-delay(3s, 6s);
 				opacity: 1;
 			}
 		}
